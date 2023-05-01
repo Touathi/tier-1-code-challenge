@@ -11,7 +11,12 @@ console.log('Step 0 complete! client.js loaded!');
 
 // 1. Start with the number 29 and set that equal to a variable named ‘highScore’;
 
+let highScore = 29
+
+console.log( 'The high score is', highScore);
 // 2. Make a new empty array called myScrabbleTiles.
+
+myScrabbleTiles = [];
 
 // 3. Put these 6 tile objects into myScrabbleTiles:
 /*
@@ -22,6 +27,22 @@ console.log('Step 0 complete! client.js loaded!');
   { tile: 'D', score: 2 }
   { tile: 'A', score: 1 }
 */
+
+function addTomyScrabbleTiles( tileletter, titlescore) {
+  if (myScrabbleTiles < 0) {
+    myScrabbleTiles.push({
+      tile : tileletter,
+      score : tilescore
+    });
+  }
+}
+
+addTomyScrabbleTiles( 'N', 1);
+addTomyScrabbleTiles( 'K', 5);
+addTomyScrabbleTiles( 'Z', 10);
+addTomyScrabbleTiles( 'X', 8);
+addTomyScrabbleTiles( 'D', 2);
+addTomyScrabbleTiles( 'A', 1);
 
 // 4. Remove the last tile from myScrabbleTiles.
 
