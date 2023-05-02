@@ -18,7 +18,7 @@ console.log( 'The high score is', highScore);
 
 // 2. Make a new empty array called myScrabbleTiles.
 
-myScrabbleTiles = [];
+let myScrabbleTiles = [];
 
 // 3. Put these 6 tile objects into myScrabbleTiles:
 /*
@@ -31,15 +31,16 @@ myScrabbleTiles = [];
 */
 
 // Making a function to add objects into the array
-function addTomyScrabbleTiles( tileletter, tilescore) {
+function addTomyScrabbleTiles( tile, score) {
   if (myScrabbleTiles > 0) {
     return undefined
   }
   else {  
     myScrabbleTiles.push({
-         tile : tileletter,
-         score : tilescore}
-         );
+         tile : tile,
+         score : score
+        
+    });
     return myScrabbleTiles
   }  
 }
@@ -65,17 +66,33 @@ console.log( 'The removed tile and score is', removedtile);
   { tile: 'F', score : 4 }
 */
 
-console.log( 'Adding a new F tile and putting 4 as its score', addTomyScrabbleTiles( 'F', 1 ) );
-
+console.log( 'Adding a new F tile and putting 4 as its score', myScrabbleTiles.push({ tile: 'F', score: 4}));
+console.log( 'My tiles now', myScrabbleTiles);
 
 // 6. Complete this function. It needs to be given an array of tile objects. 
 // The function will use a for-loop and return the sum of all the scores in the given 
 //array.
-function sumTiles(anArray) {
-  for (let numbers  of myScrabbleTiles) {
-    
+
+function sumTile(anArray) {
+  let sumOfTile = 0;
+  for (let i = 0; i < anArray.length; i++) {
+   sumOfTile = sumOfTile + myScrabbleTiles[i].score 
   }
+  return sumOfTile
 }
+console.log( 'sum is =', sumTile(myScrabbleTiles));
+
+// FOR OF LOOP
+function sumTile1(anArray) {
+  let sumOfTile1 = 0
+  for (let num of myScrabbleTiles) {
+    sumOfTile1 = sumOfTile1 + num.score
+  }
+  return sumOfTile1
+}
+
+console.log( 'for of loop', sumTile1(myScrabbleTiles));
+
 // This is where I am stuck at, Im not sure how to get just the values in the object
 // or how to just call out the tiles and not get both I did the same on my week 5.3
 // assignment as well.
@@ -84,9 +101,15 @@ function sumTiles(anArray) {
 // 7. Use the function above to get the total score for myScrabbleTiles
 // and assign the value to a variable called "myScore".
 
+let myScore = sumTile(myScrabbleTiles)
+
 
 // 8. Check whether or not your score is higher than the highScore.
 // 8-1 If your score is higher, change highScore to the new high score.
 
+if (myScore > highScore) {
+  highScore = myScore
+}
 
+console.log( 'The high score is now', highScore);
 // DONE!
