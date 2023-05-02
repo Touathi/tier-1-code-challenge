@@ -13,7 +13,9 @@ console.log('Step 0 complete! client.js loaded!');
 
 let highScore = 29
 
+// Testing my variable
 console.log( 'The high score is', highScore);
+
 // 2. Make a new empty array called myScrabbleTiles.
 
 myScrabbleTiles = [];
@@ -28,13 +30,18 @@ myScrabbleTiles = [];
   { tile: 'A', score: 1 }
 */
 
-function addTomyScrabbleTiles( tileletter, titlescore) {
-  if (myScrabbleTiles < 0) {
-    myScrabbleTiles.push({
-      tile : tileletter,
-      score : tilescore
-    });
+// Making a function to add objects into the array
+function addTomyScrabbleTiles( tileletter, tilescore) {
+  if (myScrabbleTiles > 0) {
+    return undefined
   }
+  else {  
+    myScrabbleTiles.push({
+         tile : tileletter,
+         score : tilescore}
+         );
+    return myScrabbleTiles
+  }  
 }
 
 addTomyScrabbleTiles( 'N', 1);
@@ -44,21 +51,38 @@ addTomyScrabbleTiles( 'X', 8);
 addTomyScrabbleTiles( 'D', 2);
 addTomyScrabbleTiles( 'A', 1);
 
-// 4. Remove the last tile from myScrabbleTiles.
 
+// Testing my function to see if I had succefully added my tiles
+console.log( 'My scrabble tiles and their scores', myScrabbleTiles);
+
+
+// 4. Remove the last tile from myScrabbleTiles.
+let removedtile = myScrabbleTiles.pop();
+console.log( 'The removed tile and score is', removedtile);
 
 // 5. Add the following new tile to myScrabbleTiles:
 /*
   { tile: 'F', score : 4 }
 */
 
-// 6. Complete this function. It needs to be given an array of tile objects. The function will use a for-loop and return the sum of all the scores in the given array.
+console.log( 'Adding a new F tile and putting 4 as its score', addTomyScrabbleTiles( 'F', 1 ) );
+
+
+// 6. Complete this function. It needs to be given an array of tile objects. 
+// The function will use a for-loop and return the sum of all the scores in the given 
+//array.
 function sumTiles(anArray) {
-
+  for (let numbers  of myScrabbleTiles) {
+    
+  }
 }
+// This is where I am stuck at, Im not sure how to get just the values in the object
+// or how to just call out the tiles and not get both I did the same on my week 5.3
+// assignment as well.
 
 
-// 7. Use the function above to get the total score for myScrabbleTiles and assign the value to a variable called "myScore".
+// 7. Use the function above to get the total score for myScrabbleTiles
+// and assign the value to a variable called "myScore".
 
 
 // 8. Check whether or not your score is higher than the highScore.
