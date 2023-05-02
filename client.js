@@ -83,15 +83,15 @@ function sumTile(anArray) {
 console.log( 'sum is =', sumTile(myScrabbleTiles));
 
 // FOR OF LOOP
-function sumTile1(anArray) {
-  let sumOfTile1 = 0
-  for (let num of myScrabbleTiles) {
-    sumOfTile1 = sumOfTile1 + num.score
-  }
-  return sumOfTile1
-}
+// function sumTile1(anArray) {
+//   let sumOfTile1 = 0
+//   for (let num of myScrabbleTiles) {
+//     sumOfTile1 = sumOfTile1 + num.score
+//   }
+//   return sumOfTile1
+// }
 
-console.log( 'for of loop', sumTile1(myScrabbleTiles));
+// console.log( 'for of loop', sumTile1(myScrabbleTiles));
 
 // This is where I am stuck at, Im not sure how to get just the values in the object
 // or how to just call out the tiles and not get both I did the same on my week 5.3
